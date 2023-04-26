@@ -1,0 +1,58 @@
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cart_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Pompiere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+      <main ng-show="mainview">
+        <section class="items-section">
+            <div class="cart-card" ng-repeat="item in cart_items">
+                <img class="cart-product-image" src="{{item.product_thumbnail}}" alt="">
+                <div class="cart-product-detail">
+                    <h3 class="cart-product-name">{{item.product_name}}</h3>
+                    <p class="cart-product-price">Rs. {{item.product_price}}</p>
+                    <div class="cart-product-rating">
+                        <div class="stars">
+                            <i class="checked bi bi-star-fill"></i>
+                            <p>{{item.product_rating}}</p>
+                        </div>
+                        <p class="rating-count">({{item.product_ratingcount}})</p>
+                    </div>
+                    <div class="cart-btn-row">
+                        <div class="quantity-count">
+                            <div class="number-group">
+                                <button class="ibtn minus"><i class="bi bi-dash-circle" id="btn-minus" ng-click="decrementQuantity(item)"></i></button>
+                                <input type="number" id="quantity" class="quantity" ng-model="item.quantity" readonly required>
+                                <button class="ibtn plus"><i class="bi bi-plus-circle" ng-click="incrementQuantity(item)" id="btn-plus"></i></button>
+                            </div>
+                            <button class="custom-cart-btn btn-modify" ng-click="modifyQuantity(item)">Modify</button>
+                            <button class="custom-cart-btn btn-remove" ng-click="removeItem(item)">Remove</button>
+                        </div>
+                        <div class="delete-prompt" ng-show="item.prompt">
+                            <h3>Are you sure want to remove this product from cart?</h3>
+                            <div class="btn-yesno-row">
+                                <button class="custom-cart-btn btn-modify btn-yesno" ng-click="cancel(item)">No</button>
+                                <button class="custom-cart-btn btn-remove btn-yesno" ng-click="proceed(item)">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            {{message}}
+        </section>
+      </main>
+      <main ng-show="secondaryview" style="display: flex;flex-direction:column;height: 80vh;">
+        <h2 style="align-self:center ;margin-top: auto;margin-bottom: auto;">Login to see your projects</h2>
+      </main>
+      <script src="app.js"></script>
+</body>
+</html>

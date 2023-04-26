@@ -1,0 +1,26 @@
+<div class="card" id="card">
+    <div class="image-rating">
+        <div class="image-and-tags">
+            <img src="images/sample-product-image.png" alt="" class="product-image" id="product-image">
+            <div class="tag-btns">
+                <h3 class="product-name">{{product.name}}</h3>
+            </div>
+        </div>
+        <h3 class="product-price">{{product.price | currency:"₹":2}}</h3>
+    </div>
+    <div class="product-rating">
+        <div class="stars">
+            <i class="checked bi bi-star-fill"></i>
+            <i class="checked bi bi-star-half"></i>
+            <i class="unchecked bi bi-star"></i>
+            <i class="unchecked bi bi-star"></i>
+            <i class="unchecked bi bi-star"></i>
+        </div>
+        <p class="rating-count">({{product.rating_count}})</p>
+    </div>
+    <div class="btn-row">
+        <button class="custom-btn btn-addtofav">Add to favorites</button>
+        <button class="custom-btn btn-addtocart" ng-click="get_product(product.id)">View Details</button>
+        
+    </div>
+</div>

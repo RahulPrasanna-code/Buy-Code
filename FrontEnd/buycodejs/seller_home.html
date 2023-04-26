@@ -1,0 +1,38 @@
+
+  <main>
+    <div class="products">
+
+      <div class="row-header">
+        <h2>YOUR SOFTWARES</h2>
+        <a href="#sell_product"><button class="custom-btn btn-login">Add Products</button></a>
+      </div>
+      <h2>{{message}}</h2>
+      <div class="products-row">
+        <div class="products-col" ng-repeat="product in products">
+          <div class="card" id="card">
+            <div class="image-rating">
+                <div class="image-and-tags">
+                    <img src={{product.thumb_nail}} alt="" class="product-image" id="product-image">
+                    <div class="tag-btns">
+                        <h3 class="product-name-home">{{product.name}}</h3>
+                    </div>
+                </div>
+                <h3 class="product-price-home">{{product.price | currency:"₹":2}}</h3>
+            </div>
+            <div class="product-rating">
+                <div class="stars">
+                    <i class="checked bi bi-star-fill"></i>
+                    <p>{{product.rating}}</p>
+                </div>
+                <p class="rating-count">({{product.rating_count}})</p>
+            </div>
+            <div class="btn-row">
+                <button class="custom-btn btn-addtofav">Add to favorites</button>
+                <a href="#products/{{product.id}}"><button class="custom-btn btn-addtocart">View Details</button></a>
+                
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>

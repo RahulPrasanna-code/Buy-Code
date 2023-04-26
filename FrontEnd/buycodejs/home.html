@@ -1,0 +1,108 @@
+
+<div class="slider-holder">
+  <div class="slider">
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="{{globe_images[0].image}}" class="cnt-image">
+      </div>
+  
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="{{globe_images[3].image}}" class="cnt-image" >
+      </div>
+  
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="{{globe_images[4].image}}" class="cnt-image">
+      </div>
+  
+    </div>
+    <div class="dot-holder">
+      <div class="dots" style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+</div>
+</div>
+
+  
+  <main>
+    <div class="products">
+
+      <div class="row-header">
+        <h2>SOFTWARES</h2>
+      </div>
+      <div class="products-row">
+        <div class="products-col" ng-repeat="product in products">
+          <div class="card" id="card">
+            <div class="image-rating">
+                <div class="image-and-tags">
+                    <img src={{product.thumb_nail}} alt="" class="product-image" id="product-image">
+                    <div class="tag-btns">
+                        <h3 class="product-name-home">{{product.name}}</h3>
+                    </div>
+                </div>
+                <h3 class="product-price-home">{{product.price | currency:"₹":2}}</h3>
+            </div>
+            <div class="product-rating">
+                <div class="stars">
+                    <i class="checked bi bi-star-fill"></i>
+                    <p>{{product.rating}}</p>
+                </div>
+                <p class="rating-count">({{product.rating_count}})</p>
+            </div>
+            <div class="btn-row">
+                <button class="custom-btn btn-addtofav">Add to favorites</button>
+                <a href="#products/{{product.id}}"><button class="custom-btn btn-addtocart">View Details</button></a>
+                
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    <div class="footer-content">
+      <h3 class="neon">BuyCode</h3>
+      <p>BuyCode is an amazing website for buying designs,codes and Softwares. The designs are available for various
+        platform devices, the codes are available in various programming languages and the softwares are available in
+        various domain.</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/rahul.prasanna.31"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/rh_ranger558?t=8ZWS5LxFWW5t9kTtOmXOrg&s=09"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="https://instagram.com/rh_ranger558?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/rh_ranger558?t=8ZWS5LxFWW5t9kTtOmXOrg&s=09"><i
+              class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+
+    </div>
+  </footer>
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 4000);
+    }
+  </script>

@@ -1,0 +1,290 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #111111;
+    font-family: Verdana, sans-serif;
+    color: #fff;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    z-index: 1;
+    display: flex;
+    background-color: #262626;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 100px;
+}
+
+main{
+    top:70px;
+    display: flex;
+    position: relative;
+    padding: 30px;
+    justify-content: space-between;
+    
+}
+
+.btn-login:hover{
+    box-shadow: 0 0px 10px #00aced, 0 0 10px inset #00aced;
+}
+
+.btn-cart:hover{
+    box-shadow: 0 0px 10px #fff, 0 0 10px inset;
+}
+
+.custom-cart-btn {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+.items-section{
+
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0px 20px;
+}
+
+.cart-card{
+    background-color: #262626;
+    display: flex;
+    padding-right: 20px;
+    gap: 1rem;
+}
+
+.cart-product-image{
+    height: 180px;
+    width: 280px;
+}
+
+.cart-product-detail{
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.cart-product-name{
+    position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'arial', cursive;
+  text-shadow: 
+        0 0 2px #fff;
+}
+
+.cart-product-price{
+  font-size: 20px;
+  font-weight: bold;
+  color: #00aced;
+  font-family: 'arial', cursive;
+}
+
+.cart-product-rating{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+.btn-remove{
+    padding: 10px 15px;
+    color: #fff;
+    background: #00aced;
+    border: 1px solid #00aced;
+}
+
+.btn-remove:hover{
+box-shadow:  0 0 5px #00aced,  0 0 8px #00aced;
+
+}
+
+.btn-remove i{
+padding-right: 10px;
+}
+
+.btn-modify i{
+padding-right: 10px;
+}
+
+
+.btn-modify{
+color: #00aced;
+padding: 10px 15px;
+border: 1px solid #00aced;
+}
+
+.btn-modify:hover{
+box-shadow:  0 0 5px #00aced,  0 0 8px #00aced;
+
+}
+
+.cart-btn-row{
+    margin-top: auto;
+    width: 100%;
+}
+
+.number-group{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.quantity-count{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quantity{
+    width: 30px;
+    height: 30px;
+}
+
+.quantity-count i{
+    color: #00aced;
+}
+
+.delete-prompt{
+    position: fixed;
+    z-index: 1;
+    top:130px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    background-color: #111111;
+    box-shadow: 0 0 2px #00aced;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.btn-yesno-row{
+    display: flex;
+    margin-left: auto;
+    gap: 1rem;
+}
+
+.btn-yesno{
+    width: 100px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  text-align: center;
+  background: none;
+  border: 1px solid #00aced;
+  box-shadow: 0 0 3px #00aced;
+  color: #fff;
+}
+
+.summary-section{
+    position: fixed;
+    right: 30px;
+    height: 80vh;
+    width: 30%;
+}
+
+.summary-card{
+    padding: 20px;
+    background-color: #262626;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 0 5px #00aced;
+}
+
+.total-block{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    height: 40px;
+}
+
+.total-price{
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'arial';
+    color: #fff;
+    text-shadow: 0 0 10px #00aced;
+}
+
+.total-price-label{
+    font-size: 20px;
+    color: #00aced;
+}
+
+.total-products-block{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.total-qty-label{
+    color: #00aced;
+}
+
+.total-qty{
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'arial';
+    color: #fff;
+    text-shadow: 0 0 10px #00aced;
+}
+
+.products-list{
+    align-self: center;
+    margin-top: 20px;
+    width: 100%;
+    overflow-y: scroll;
+    height: 300px;
+}
+
+.blue{
+    color: #00aced;
+}
+
+.products-list-table tr td,th{
+    padding: 10px 15px;
+}
+
+.ibtn{
+    transition: .3s;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.ibtn:hover{
+    text-shadow: 0 0 10px #00aced;
+}
+
+.ibtn i{
+    font-size: 15px;
+}

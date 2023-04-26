@@ -1,0 +1,53 @@
+    <head>
+        
+  <link rel="stylesheet" href="css/product_detail_style.css">
+    </head>
+    <main>
+        <section class="product-detail-section">
+            <h2 class="product-name">{{product.name}}</h2>
+            <div class="product-detail-view">
+                <div class="thumbnail">
+                    <button class="btn-slider btn-prev" ng-click="prev()"><i class="bi bi-arrow-left-circle{{left_fill}}"></i></button>
+                    <button class="btn-slider btn-next" ng-click="next()"><i class="bi bi-arrow-right-circle{{right_fill}}"></i></button>
+                    <img src={{thumbnail}} alt="Product Thumbnail" class="product-thumbnail">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-price">Rs. {{product.price}}</h2>
+                    <div class="tag-section">
+                        <i class="bi bi-tags-fill"></i>
+                        <ul class="tag-list">
+                            <li><a class="chip-btn" href="#">Website</a></li>
+                            <li><a class="chip-btn" href="#">Cloud</a></li>
+                            <li><a class="chip-btn" href="#">Software</a></li>
+                            <li><a class="chip-btn" href="#">Website</a></li>
+                            <li><a class="chip-btn" href="#">Cloud</a></li>
+                            <li><a class="chip-btn" href="#">Software</a></li>
+                            <li><a class="chip-btn" href="#">Website</a></li>
+                            <li><a class="chip-btn" href="#">Cloud</a></li>
+                            <li><a class="chip-btn" href="#">Software</a></li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack-section">
+                        <i class="bi bi-file-earmark-code-fill"></i>
+                        <ul class="tech-stack-list">
+                            <li><a class="chip-btn">Python</a></li>
+                            <li><a class="chip-btn">Html</a></li>
+                            <li><a class="chip-btn">Css</a></li>
+                            <li><a class="chip-btn">Django</a></li>
+                        </ul>
+                    </div>
+                        <p class="product-verified"><i class="bi bi-check-circle-fill"></i> Verified by Buycode</p>
+                        <p>{{message}}</p>
+                        <div class="purchase-section" ng-show="isNotOwner">
+                            <a ng-click="addToCart(product.id)"><button class="custom-btn btn-addtocart"><i class="bi bi-cart4"></i>Add to cart</button></a>
+                            <a href="#"><button class="custom-btn btn-addtofav"><i class="bi bi-heart-fill"></i>Add to Favorites</button></a>
+                        </div>
+                        <div class="purchase-section" ng-show="isOwner">
+                            <a href="#modifyproduct/{{product.id}}"><button class="custom-btn btn-addtocart"><i class="bi bi-pencil-square"></i>Modify Product</button></a>
+                            <button  ng-click="deleteProduct(product.id)" class="custom-btn btn-delete"><i class="bi bi-x-circle"></i>Delete Product</button>
+                        </div>
+                    </div>
+            </div>
+            
+        </section>
+    </main>

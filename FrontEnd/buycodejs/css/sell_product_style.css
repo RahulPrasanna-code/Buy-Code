@@ -1,0 +1,118 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 89vh;
+}
+
+.selling-form{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #262626;
+    box-shadow: 0 0 5px #00aced;
+    padding: 20px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+}
+
+.row input{
+    width:80%;
+    height: 30px;
+    background: none;
+    border: 1px solid #00aced;
+    border-radius: 5px;
+    color: #fff;
+    padding-left: 20px;
+}
+
+.row input:focus{
+    outline: none;
+    box-shadow: 0 0 5px #00aced;
+    background: none;
+}
+
+.column-row textarea:focus{
+    outline: none;
+    box-shadow: 0 0 5px #00aced;
+    background: none;
+}
+
+
+.column-row{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.column-row textarea{
+    width: 80%;
+    height: 100px;
+    color: #fff;
+    resize: none;
+    background: none;
+    border: 1px solid #00aced;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+.custom-file-upload input{
+    display: none;
+}
+
+.custom-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    border: 1px solid #00aced;
+    color: #00aced;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.custom-file-upload span{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.custom-file-upload span p{
+    width: 300px;
+    overflow-x: hidden;
+}
+
+.custom-file-upload i{
+    font-size: 20px;
+}
+
+.image-row{
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+}
+
+.image-row button{
+    transition: .3s;
+    background-color: #00aced;
+    border: none;
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    margin-top: auto;
+}
+
+.image-row button:hover{
+    box-shadow: 0 0 8px #00aced;
+}

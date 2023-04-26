@@ -1,0 +1,47 @@
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Product</title>
+    <link rel="stylesheet" href="css/sell_product_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Pompiere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<main ng-show="main_view">
+
+    <form class="selling-form" ng-submit="addProduct()">
+        <h2>Product Details</h2>
+        <div class="row">
+            <label for="name">Name :</label>
+            <input type="text" ng-model="name" required>
+        </div>
+        <div class="row">
+            <label for="name">Price :</label>
+            <input type="text" ng-model="price" required>
+        </div>
+        <div class="column-row">
+            <label for="name">Description :</label>
+            <textarea name="description" ng-model="desc" required></textarea>
+        </div>
+        <div class="image-row">
+            <div style="display:flex;gap:.8rem;">
+                <label for="">Thumbnail :</label>
+                <label class="custom-file-upload">
+                    <p>Upload Image</p>
+                    <input type="file" id="inputTag" file-model="thumbnail"/>
+                    <i class="bi bi-card-image"></i>
+                    <span ><p ng-bind="thumbnail.name"></p></span>
+                </label>
+            </div>
+            <button type="submit">{{button}}</button>
+        </div>
+    </form>
+
+</main>
+<main ng-show="secondary_view">
+<h2 ng-if="message">{{message}}</h2>
+</main>

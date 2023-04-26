@@ -1,0 +1,45 @@
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/seller_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Pompiere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<div class="head-nav">
+
+    <h2>{{product_name}}</h2>
+</div>
+<main ng-show="main_view">
+    <div class="image-display">
+        <h3>You can see uploaded images here</h3>
+        <div class="product-images">
+            <div class="image-card" ng-repeat="image in images">
+                <button ng-click="deleteImage(image)"><i class="bi bi-x-circle"></i></button>
+                <img class="product-image" src="{{image.image}}" style="height: 150px;width: 300px;" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="image-upload">
+        <h3>Start Uploading product images</h3>
+        <div class="upload-grp">
+            <label class="custom-file-upload">
+                <input type="file" id="inputTag" file-model="upload_image"/>
+                <i class="bi bi-card-image"></i>
+                <span ><p ng-bind="upload_image.name"></p></span>
+            </label>
+            <button class="upload-btn" ng-click="uploadImage()">upload</button>
+            <button class="save-btn" ng-click="returnHome()">Continue</button>
+        </div>
+        <p style="color:#00aced">{{message}}</p>
+    </div>
+</main>
+<main ng-show="secondary_view">
+    <h2>Not Found</h2>
+</main>
+<script>

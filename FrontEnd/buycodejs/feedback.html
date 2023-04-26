@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+    
+    <link rel="stylesheet" href="css/feedback_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Pompiere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+    <main>
+        <form action="" class="feedback-form">
+            <div class="form-header">
+                <h1>CONNECTING WITH US</h1>
+                <span></span>
+            </div>
+            <div class="row">
+                <input type="text" ng-model="name" name="name" autocomplete="off" placeholder="Name.." required>
+                <input type="text" ng-model="email" name="email" autocomplete="off" placeholder="Email.." required>
+            </div>
+            <div class="row">
+                <input type="text" ng-model="subject" name="subject" autocomplete="off" placeholder="Subject.." required>
+            </div>
+            <div class="row">
+                <textarea name="feedback" ng-model="content" placeholder="Write your feedback here.." required aria-placeholder="kdsj" id="feedback" cols="30" rows="9" ></textarea>
+            </div>
+            <button class="btn-submit" ng-click="sendFeedBack()">Send Feedback</button>
+            <p>{{return_message}}</p>
+        </form>
+    </main>

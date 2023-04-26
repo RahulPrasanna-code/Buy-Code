@@ -1,0 +1,29 @@
+<head>
+  <link rel="stylesheet" href="css/login_style.css"> 
+</head>
+    <main >
+        <section class="login">
+            <p >{{responseuser}}</p>
+            <h1 class="login-text">Login with:</h1>
+
+            <form class="login-form" name="login" ng-submit="loginUser()" >
+                <p id="error"></p>
+                <input type="email" autocomplete="off"  id="username" name="username" ng-model="username"  placeholder="username" required>
+                <input type="password" id="password" name="password" ng-model="password" placeholder="password" required>
+                <button type="submit" class="custom-btn btn-login ">Login</button>
+            </form>
+            
+            <a href="#" ><button class="custom-btn btn-signup">Signup</button></a>
+
+            <h2 class="or-text">OR</h2>
+
+            <div class="social-login">
+                <div class="social-login-list">
+                    <a href="#"><i class="bi bi-google"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+            
+        </section>
+    </main>

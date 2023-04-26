@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>     
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+        
+	  <meta charset="utf-8">
+	  <title>AngularJS Routing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Pompiere&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.css" integrity="sha512-9vczIFWP5vXj/AROv919naYst7pXQ1WFqi+d5QZLCWA7LPJji4wYtLEP5ooAin85CkxSl+0ZpC/+j/xg5Xg+BA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+  <link rel="stylesheet" href="css/home.css">
+	</head>
+	<body ng-app="ecommerce" ng-controller="indexController">
+        <section class="nav-bar">
+            <header>
+              <a href="#" class="logo-btn"><h1 class="logo">BuyCode</h1></a>
+              <div class="search-login">
+                <div class="search-bar">
+                  <input class="search-bar-input" type="text" name="search" placeholder="Search for designs, codes and more">
+                  <a href=""><i class="bi bi-search"></i></a>
+                </div>
+                <p style="color:#00aced">{{user_name}}</p>
+                <a href="#login" ng-show="usernotlogged" ><button class="custom-btn btn-login">Login</button></a>
+              </div>
+              
+              <toaster-container></toaster-container>
+              <div class="btn-groups">
+                <div class="btn-more">
+                  <a href="">More</a> <i class="bi bi-chevron-down"></i> 
+                
+                  <div class="drop-down-content">
+                    <a href="#seller">Your{{name}} Products <i class="bi bi-box-seam"></i></a>
+                    <a ng-click="logout()">Logout <i class="bi bi-box-arrow-in-right"></i></a>
+                    <a href="#feedback">Write to us <i class="bi bi-pencil-square"></i></a>
+                    
+                  </div>
+                </div>
+                
+                <a href="#cart"><button class="custom-btn btn-cart"> Cart</button></a>
+              </div>
+              </header>
+              
+          </section>
+
+		<ng-view></ng-view>
+
+      
+
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.js" integrity="sha512-amwB9QMDBPhNBT/RZvfuZMXonx2jTtwVU1fJW1OLX7z5gAyWxkjeGFEjcLVGPoyljwqrtQtCrhxmzKHu/HH4Lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</body>
+</html>

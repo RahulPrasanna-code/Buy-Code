@@ -1,0 +1,20 @@
+<head>
+    <link rel="stylesheet" href="css/sell_product_tag.css">
+</head>
+
+<main>
+    <div class="selected-tags tag-section">
+        <ul class="tag-list">
+            <li ng-repeat="tag in tags" ><button class="chip-btn {{isSelected(tag)}}" ng-click="chipClick(tag)">{{tag}}</button></li>
+            
+        </ul>
+    </div>
+
+    <div class="available-tags tag-section">
+        <ul class="tag-list">
+            <li><button class="chip-btn selected">Website</button></li>
+            <li><button class="chip-btn">Cloud</button></li>
+            <li><button class="chip-btn">Software</button></li>
+        </ul>
+    </div>
+</main>
