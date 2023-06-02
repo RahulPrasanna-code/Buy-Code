@@ -1,0 +1,11 @@
+version: '4.19'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - 4000:4000
+  backend:
+    build: ./backend
+    ports:
+      - 8000:8000

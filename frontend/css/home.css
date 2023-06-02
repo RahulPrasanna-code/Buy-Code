@@ -509,12 +509,15 @@ footer{
 
 main{
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .products{
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .products-row{
@@ -522,7 +525,6 @@ main{
   flex-wrap: wrap;
   padding: 20px;
   width: 100%;
-  gap: 1rem;
 }
 
 .products-col{

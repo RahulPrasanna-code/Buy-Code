@@ -465,6 +465,8 @@ app.controller('cartController',function($scope,$http,$window,Session,toaster){
             return
         }
 
+        console.log("HEEYYYY");
+
         var token = Session.getItem("token")
 
         var data = {
@@ -478,18 +480,9 @@ app.controller('cartController',function($scope,$http,$window,Session,toaster){
         } 
 
         $http.put("http://127.0.0.1:8000/cart/update/"+item.id,JSON.stringify(item),{headers:headers}).then(function(response){
-            $scope.message = "Quantity Modified"
 
-            toaster.success('Title', 'Message');
+            toaster.success('Modified', 'Quantity changed.');
 
-         var setMessage = function(message){
-            $scope.message = message
-         }
-
-            setTimeout(function(){
-                setMessage("")
-                $scope.$apply()
-            },3000)
 
         })
     }
